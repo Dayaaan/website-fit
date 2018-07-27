@@ -1,0 +1,26 @@
+	<div class="admin-message table-responsive">
+		
+		<h1><i class="fas fa-comments"></i> Message</h1>
+
+		<div class="oneMessage">	
+			
+			<p><?= $message["lastname"] . " " . $message["firstname"]; ?></p>
+
+		    <p><em><?= $message["email"]; ?></em><p>
+
+		    <p><?= $message["message"]; ?><p>
+
+		    <em>Message envoyé le : <?= Tools::getFormattedDate($message["created_at"]); ?></em>
+		    <div class="control-btn">
+				<div>	
+			   		 <button data-id="<?= $message["id"]; ?>" class="btn-delete" ><i class="fas fa-trash-alt"></i> Supprimer</button>
+			    </div>
+			    <div>
+			    	<a href="<?= $requestUrl ?>/Admin/Message"><i class="fas fa-backward"></i> Retour aux messages</a>
+			    </div>
+		   </div>
+	    </div>
+	</div>
+	<script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+	<script src="<?= $wwwUrl ?>/js/message.js"></script>
+	

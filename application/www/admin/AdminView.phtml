@@ -1,0 +1,26 @@
+	<div class="admin">	
+
+		<h1><i class="fas fa-cogs"></i> Administration</h1>
+		
+		<div class="nav-admin">
+			<ul>
+				<li>
+					<i class="fas fa-user-alt"></i>
+					<a href="<?= $requestUrl ?>/Admin/Account?id=<?= $_SESSION["auth"]["user_id"]?>">
+						 Votre compte
+					</a>
+				</li>
+				<li>
+					<i class="fas fa-dumbbell"></i>
+					<a href="<?= $requestUrl ?>/Admin/Coach">
+						 Vos Coachings
+					</a>
+				</li>
+				<li>
+					<i class="fas fa-file-signature"></i>
+					<a href="<?= $requestUrl ?>/Admin/Message">
+						 Vos Messages
+					</a>
+				</li>
+			</ul>
+	</div>

@@ -1,0 +1,66 @@
+	<div class="admin-message table-responsive">	
+
+		<h1><i class="fas fa-comments"></i> Vos messages</h1>
+
+		<?php if ($messages == null) : ?>
+
+			<p>Vous avez <strong>aucun</strong> message</p>
+
+		<?php else : ?>	
+		
+		<table id="mytable" class="table table-bordred table-striped table-hover">
+                   
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
+                <th scope="col">Message envoyé le</th>
+                <th scope="col">Read</th>
+                <th scope="col">Delete</th>
+            </thead>
+   		    <tbody>
+   	
+    			<?php
+	    			 $count = 1;
+	    			 foreach ($messages as $message) : 
+    			 ?>
+
+			    <tr>
+			    	<td scope="row">
+			    		<?= $count++; ?>		
+			    	</td>
+				    <td>
+				    	<?= Tools::cleanText($message["lastname"]); ?>	
+				    </td>
+				    <td>
+				    	<?= Tools::cleanText($message["firstname"]); ?>				    		
+				    </td>
+				    <td>
+				    	<?= Tools::cleanText($message["email"]); ?>				    		
+				    </td>
+				    <td>
+				    	<?= Tools::cleanText(substr($message["message"],0,10)); ?>...
+				    </td>
+				    <td>
+				    	<?= Tools::getFormattedDate($message["created_at"]); ?>
+				    </td>
+				    <td>
+				    	<a href="<?= $requestUrl ?>/Admin/Onemessage?id=<?= $message['id']; ?>"><i class="fab fa-readme"></i></a>
+				    </td>
+				    <td>
+				    	<button data-id="<?= $message["id"]; ?>" class="btn-delete"><i class="fas fa-trash-alt"></i></button>
+				    </td>
+			    </tr>
+
+				<?php endforeach; ?>
+
+	    <?php endif; ?>
+
+			</tbody>
+		</table>
+		<a href="<?= $requestUrl ?>/Admin">Retour à la page admin</a>
+	</div>
+	<script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+	<script src="<?= $wwwUrl ?>/js/message.js"></script>

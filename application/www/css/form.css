@@ -1,0 +1,110 @@
+/*FORMULAIRE*/
+
+.form-control,.custom-select {
+	font-size: 2rem;
+	border: 3px solid #e5e5e5;
+}
+.form-control:focus,.custom-select:focus {
+
+	border-color: #7f7f7f;
+    box-shadow: none;	
+}
+.social {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.social li a {
+	color: #727272;
+	text-decoration: none;
+}
+
+.btn-lg {
+	font-size: 2.5rem;
+}
+input[type="submit"] {
+	background: #646464;
+    color: #fff;
+    border: 2px solid #646464;
+}
+input[type="submit"]:hover {
+	background: #828484;
+    border-color: #828484;
+}
+iframe {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+.login, .register {
+	padding: 5rem 2rem;
+}
+#contact_form, #contact_form {
+	padding-top: 5rem;
+}
+
+#contact_form input[type="submit"], #contact_form input[type="submit"] {
+	margin-top: 2rem;
+
+}
+
+.input-group-text {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.custom-select {
+	height: 4rem;
+}
+
+.hide-alert {
+	display: none;
+	margin-top: 1rem;
+}
+
+.success-message {
+	width: 25%;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	
+	/*FORMULAIRE*/
+	.contact {
+		padding: 5rem 15rem;
+	}
+	iframe {
+		height: 300px;
+	}
+	.login, .register {
+		padding: 15rem 20rem;
+	}
+
+	.admin-message, .admin {
+		width: 100%;
+		padding: 15rem 7rem;
+	}
+
+	.coaching-form {
+		width: 35%;
+	}
+	.form-password {
+		width: 45%;
+	}
+
+}
+@media screen and (min-width: 1025px) {
+
+	.contact form {
+		padding-left: 15rem;
+		padding-right: 15rem;
+	}
+
+	.coaching-form {
+		width: 30%;
+	}
+	.form-password {
+		width: 25%;
+	}
+
+}

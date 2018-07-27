@@ -1,0 +1,81 @@
+	<div class="coaching">	
+		<div class="crossfit">
+			<img src="<?= $wwwUrl ?>/images/crossfit.jpg" alt="crossfit">
+		</div>
+		<div class="coaching-form">
+			<h1><i class="fas fa-comments"></i> Inscription</h1>
+			<p>Après avoir reçu votre formulaire, je vous contacterai dans les 2 - 3 jours</p>
+			<form action="" method="POST"  id="contact_form">
+				<div class="form-group">
+					<input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nom">
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un nom *</div>
+				</div>
+				<div class="form-group">
+					<input id="firstname" name="firstname" type="text" class="form-control" placeholder="Prénom">
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un prénom *</div>
+				</div>
+				<div class="form-group">
+					<input id="age" name="age" type="text" class="form-control" placeholder="Âge">
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir votre âge</div>
+				</div>
+				<div class="form-group">
+					<input id="email" name="email" type="text" class="form-control" placeholder="E-mail">
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un email *</div>
+				</div>
+				<div class="form-group">
+					<select id="gender" name="gender" class="custom-select my-1 mr-sm-2">
+					    <option>Sexe...</option>
+					    <option value="man">Homme</option>
+					    <option value="woman">Femme</option>
+		 			 </select>
+		 			 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir le sexe *</div>
+	 			</div>
+	 			<div class="form-group">
+					<input id="weight" name="weight" type="text" class="form-control" placeholder="Entrez votre poid (kg)">
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un poid en kg *</div>
+				</div>
+				 <div class="form-group">
+					<input id="height" name="height" type="text" class="form-control" placeholder="Entrez votre taille (cm)">
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir une taille en cm *</div>
+				</div>	 			
+	 			<div class="form-group">
+					<select id="nb-training" name="nb_training" class="custom-select my-1 mr-sm-2">
+					    <option>Nombre de séances par semaine</option>
+					    <option value="1">1</option>
+					    <option value="2">2</option>
+					    <option value="3">3</option>
+					    <option value="4">4</option>
+					    <option value="5">5</option>
+					    <option value="6">6</option>
+					    <option value="7">7</option>
+		 			 </select>
+		 			 <div class="hide-alert alert alert-danger" role="alert">Veuillez choisir le nombre de séance *</div>
+	 			</div>
+	 			<div class="form-group">
+					<select id="nb-year" name="nb_year" class="custom-select my-1 mr-sm-2">
+					    <option>Nombre d'années de sport</option>
+					    <option value="1">1 an</option>
+					    <?php for ($i = 2; $i < 11 ; $i++) : ?>
+					    	<option value="<?= $i; ?>"><?= $i; ?> ans</option>
+					    <?php endfor; ?>
+		 			 </select>
+		 			 <div class="hide-alert alert alert-danger" role="alert">Veuillez choisir le nombre d'années de sport *</div>
+	 			</div>
+				<div class="form-group">
+					<textarea id="other" class="form-control" name="other" cols="30" rows="2" placeholder="Conditions médicales,Allergies, etc.."></textarea>
+					<div class="hide-alert alert alert-danger" role="alert">Conditions médicales,Allergies, etc.. *</div>
+				</div>
+				<div class="form-group">
+					<textarea id="goal" class="form-control" name="goal" cols="30" rows="5" placeholder="Votre objectif"></textarea>
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir votre objectif *</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Je m'inscris" class="btn btn-primary btn-md btn-lg" name="submit">
+				</div>
+			
+			</form>
+		</div>
+
+
+	</div>
+

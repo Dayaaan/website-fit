@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site de coaching privé" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Coaching, Coach privé, Coach Nantes, Nantes, fitness" />
+    <title>Dayan Coach privé</title>
+    <!--===============================================================================================-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/normalize.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/form.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/styles.css">
+    <!--========================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet"> 
+    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <!--===============================================================================================-->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu-desktop">
+                <li><a href="<?= $requestUrl ?>">Accueil</a></li>
+                <li><a href="<?= $requestUrl ?>/Coaching">Coaching</a></li>
+                <li><a href="<?= $requestUrl ?>/Contact">Contactez moi</a></li> 
+                <?php
+                    $userSession = new UserSession();
+                ?>
+                <?php if ($userSession->isConnected()): ?>
+                    <li><a href="<?= $requestUrl ?>/Admin">Admin</a></li>
+                    <li><a href="<?= $requestUrl ?>/Logout">Se deconnecter</a></li>
+                    <style>
+                        @media screen and (min-width: 1025px) {
+                            header {
+                                height: 55rem;
+                            }
+                            header nav ul li:nth-child(2) {
+                                margin-right: 45rem;
+                            }
+                        }
+                    </style>
+                <?php else: ?>
+                    <li><a href="<?= $requestUrl ?>/Login">Login</a></li>
+                <?php endif ?>
+            </ul>
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="<?= $requestUrl ?>"><li>Accueil</li></a>
+                    <a href="<?= $requestUrl ?>/Coaching"><li>Coaching</li></a>
+                    <a href="<?= $requestUrl ?>/Contact"><li>Contactez moi</li></a>
+                    <?php
+                        $userSession = new UserSession();
+                    ?>
+                    <?php if ($userSession->isConnected()): ?>
+                    <a href="<?= $requestUrl ?>/Admin"><li>Admin</li></a>
+                    <a href="<?= $requestUrl ?>/Logout"><li>Se déconnecter</li></a>
+                    <?php else: ?>
+                        <a href="<?= $requestUrl ?>/Login"><li>Login</li></a>
+                    <?php endif ?>
+                </ul>
+            </div>
+        </nav>
+         
+        <?php $bag = new FlashBag(); ?>
+
+        <?php if ($bag->hasMessages()): ?>
+        <ul class="box-messages">
+            <?php foreach ($bag->fetchMessages() as $message): ?>
+                <li><?= $message ?></li>
+            <?php endforeach ?>
+        </ul>
+        <?php endif ?>
+    </header>
+    <main>
+        
+    <?php include $this->viewData['template'] ?>
+
+    </main>
+    <footer>
+        <section>
+            <div class="flex-footer">
+                <div>
+                    <h3>Menu</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="<?= $requestUrl ?>">Accueil</a></li>
+                            <li><a href="<?= $requestUrl ?>/Coaching">Coaching</a></li>
+                            <li><a href="<?= $requestUrl ?>/Contact">Contact</a></li>
+                            <?php
+                                $userSession = new UserSession();
+                                ?>
+                                <?php if ($userSession->isConnected()): ?>
+                                    <li><a href="<?= $requestUrl ?>/Admin">Admin</a></li>
+                                    <li><a href="<?= $requestUrl ?>/Logout">Se deconnecter</a></li>
+                                <?php else: ?>
+                                    <li><a href="<?= $requestUrl ?>/Login">Login</a></li>
+                                <?php endif ?>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3>Suivez-moi</h3>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook-f"></i> <span>    Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                <p>
+                    <small>
+                        &copy; 2018 Dayan Nguyen. All Rights Reserved. <a href="<?= $requestUrl ?>/Mentions">Mentions Légales</a> 
+                    </small>
+                </p>
+            </div>
+        </section>
+
+        <!-- <?php Tools::pre($_SESSION); ?> -->
+
+    </footer>
+     
+    
+    <script src="<?= $wwwUrl ?>/js/main.js"></script>
+    <script src="<?= $wwwUrl ?>/js/form.js"></script>
+</body>
+</html>

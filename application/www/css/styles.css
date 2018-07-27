@@ -1,0 +1,493 @@
+/*********
+**GLOBAL**
+*********/ 
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 2rem;
+	font-family: 'Work Sans', sans-serif;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none!important;
+}
+small {
+	font-size: 2rem;
+}
+h1 {
+	font-weight: bold;
+}
+
+main a {
+	color: #333333;
+}
+main a:hover {
+	color: #fe7000;
+}
+
+/*********
+**HEADER**
+*********/ 
+
+header {
+	height: 30rem;
+	background-image: url("../images/banniere.jpg");
+	background-size: cover;
+	background-position: center;
+}
+header nav ul {
+	padding-top: 3rem; 
+	margin: 0;
+	
+}
+header nav ul li {
+	padding-bottom: 2rem;
+}
+
+header nav ul li a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fe7000;
+	content: '';
+	transition: top 0.3s;
+}
+
+header nav ul li a::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 2px;
+	background: #fe7000;
+	content: '';
+	transition: height 0.3s;
+	color: #fff;
+}
+header nav ul li a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	color: #fff!important;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    margin: 0 10px;
+	padding: 10px 20px;
+	font-family: 'Francois One', sans-serif;
+}
+header nav ul li a:hover::before {
+	top: 100%;
+	opacity: 1;
+}
+
+header nav ul li a:hover::after {
+	height: 100%;
+}
+.menu-desktop {
+	display: none;
+}
+
+/*MENU MOBILE*/
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #fe7000;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #fe7000;
+}
+#menuToggle input:checked ~ span:nth-last-child(3) {	
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #262626;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  color: #FFFFFF;
+}
+#menu li:hover {
+	color: #fe7000;
+}
+#menuToggle input:checked ~ ul {
+  transform: none;
+} 
+
+/*END MENU MOBILE */
+
+.box-messages {
+	display: none;
+}
+
+/*********
+**MAIN**
+*********/ 
+
+
+.loader {	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #191a1a;
+	z-index: 9999;
+	cursor : wait;
+}
+
+.presentation, .contact, .login, .register, .admin-message, .admin, .coaching, .account {
+    background: #FFFFFF;
+    margin: 3rem 2rem 3rem;
+    text-align: justify;
+}
+
+.coaching img, .presentation img {
+	width: 100%;
+	border-radius: 15px;
+}
+.crossfit {
+	padding-bottom: 3rem;
+}
+
+/*ADMIN*/
+.admin-message
+{
+	width: 100%;
+	overflow-y: auto;
+	margin: 0;
+	padding: 3rem 2.5rem;
+}
+
+.nav-admin {
+	margin-top: 2rem;
+}
+.nav-admin li {
+	padding-top: 2rem;
+}
+.nav-admin i {
+	color: #fe7000;
+}
+
+.admin a {
+	color: #000000;
+}
+.admin a:hover {
+	border-bottom: 1px solid #000000;
+}
+
+.oneMessage {
+	padding-top: 5rem;
+}
+
+.oneMessage p:first-child {
+	color: #FF0000;
+}
+
+.oneMessage .control-btn {
+	margin-top: 5rem;
+	margin-bottom: 2rem;
+}
+
+.fa-readme {
+	color: #008000;
+}
+.fa-trash-alt {
+	color: #FF0000;
+}
+.coaching form {
+	padding-top: 2rem;
+}
+
+.btn-delete {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.user {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+
+
+/*********
+**FOOTER**
+*********/ 
+
+footer {
+   background-image: url("../images/footer_bg.jpg");
+   height: 40rem;
+   width: 100%;
+   padding: 2rem 2rem;
+   color: #FFFFFF;
+}
+footer section ul li a {
+	color: rgba(255, 255, 255, 0.7);
+}
+footer section ul li a:hover {
+	color: #fe7000;
+	text-decoration: none;
+}
+
+.copyright a {
+	color: #FFFFFF;
+}
+
+/*********
+**MEDIA**
+*********/
+ 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	/*HEADER*/
+
+	#menuToggle {
+		display: none;
+	}
+	.menu-desktop {
+		display: flex;
+	}
+	header {
+		background-size: cover;
+		background-position: initial;
+	}
+	header nav ul {
+		padding-top: 10rem;
+		display: flex;
+		justify-content: space-around;
+	}
+	.box-messages {
+		display: block;
+		color: #FFFFFF;
+	}
+
+	/*MAIN*/
+
+	.presentation {
+		padding: 5rem 10rem;
+	}
+	.presentation div:nth-child(2) {
+		padding-top: 2rem;
+	}
+	.coaching {
+		display: flex;
+		justify-content: space-around;
+	}
+	.crossfit {
+		width: 40%;
+		padding-top: 20rem;
+	}
+
+
+	/*FOOTER*/
+
+	footer {
+		height: 40rem;
+	}
+	footer section {
+		padding-top: 2rem;
+	}
+	.flex-footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	footer section p {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+
+	/*HEADER*/
+
+	#menuToggle {
+		display: none;
+	}
+	.menu-desktop {
+		display: flex;
+	}
+
+	header {
+		height: 55rem;
+		background-size: initial;
+		background-position: initial;
+	}
+
+	header nav ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+	header nav ul li {
+		padding-right: 10rem;
+	}
+	.box-messages {
+		display: block;
+		color: #FFFFFF;
+	}
+
+	/*MAIN*/
+
+	.presentation {
+ 		z-index: 2;
+		margin: 0;
+ 		padding: 10rem 25rem;
+ 		position: relative;
+ 		display: flex;
+		justify-content: space-around;
+	}
+	.presentation div:first-child {
+		width: 45%;
+	}
+	.presentation > div > h1 {
+		padding-bottom: 3rem;
+	}
+	.presentation div:nth-child(2) {
+		padding-left: 15rem;
+	}
+
+	.contact {
+ 		z-index: 2;
+		margin: 0;
+		display: flex;
+		padding: 10rem 30rem;
+		position: relative;
+	}
+	.coaching {
+		z-index: 2;
+		margin: 0;
+		padding: 10rem 20rem 10rem 2rem;
+ 		position: relative;
+ 		display: flex;
+ 		justify-content: space-around;
+	}
+	.crossfit {
+		width: 40%;
+		padding-top: 15rem;
+	}
+	.login, .register {
+		position: relative;
+ 		z-index: 2;
+		margin: 0;
+		padding: 15rem 70rem;
+	}
+	.admin-message, .admin, .account {
+		padding: 15rem 20rem;
+		position: relative;
+ 		z-index: 2;
+		margin: 0;
+	}
+
+	iframe {
+		height: 350px;
+	}
+
+	/*FOOTER*/
+
+	footer {	
+	    width: 100%;
+	    z-index: 1;
+	}
+	footer section {
+		position: fixed;
+		bottom: 0;
+		left: 30%;
+	}
+	.flex-footer {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 auto;
+
+	}
+	.flex-footer h3 {
+		margin-bottom: 3rem;
+		font-size: 3rem;
+	}
+
+	.copyright {
+		padding-top: 5rem;
+		text-align: center;
+	}
+
+}
+
+
