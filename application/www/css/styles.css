@@ -389,6 +389,7 @@ footer section ul li a:hover {
 		height: 55rem;
 		background-size: initial;
 		background-position: initial;
+		background-attachment: fixed;
 	}
 
 	header nav ul {
@@ -408,7 +409,7 @@ footer section ul li a:hover {
 	.presentation {
  		z-index: 2;
 		margin: 0;
- 		padding: 10rem 25rem;
+ 		padding: 10rem 10rem;
  		position: relative;
  		display: flex;
 		justify-content: space-around;
