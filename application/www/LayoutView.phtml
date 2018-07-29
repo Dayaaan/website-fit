@@ -43,16 +43,6 @@
                 <?php if ($userSession->isConnected()): ?>
                     <li><a href="<?= $requestUrl ?>/Admin">Admin</a></li>
                     <li><a href="<?= $requestUrl ?>/Logout">Se deconnecter</a></li>
-                    <style>
-                        @media screen and (min-width: 1025px) {
-                            header {
-                                height: 55rem;
-                            }
-                            header nav ul li:nth-child(2) {
-                                margin-right: 45rem;
-                            }
-                        }
-                    </style>
                 <?php else: ?>
                     <li><a href="<?= $requestUrl ?>/Login">Login</a></li>
                 <?php endif ?>
@@ -104,15 +94,6 @@
                             <li><a href="<?= $requestUrl ?>">Accueil</a></li>
                             <li><a href="<?= $requestUrl ?>/Coaching">Coaching</a></li>
                             <li><a href="<?= $requestUrl ?>/Contact">Contact</a></li>
-                            <?php
-                                $userSession = new UserSession();
-                                ?>
-                                <?php if ($userSession->isConnected()): ?>
-                                    <li><a href="<?= $requestUrl ?>/Admin">Admin</a></li>
-                                    <li><a href="<?= $requestUrl ?>/Logout">Se deconnecter</a></li>
-                                <?php else: ?>
-                                    <li><a href="<?= $requestUrl ?>/Login">Login</a></li>
-                                <?php endif ?>
                         </ul>
                     </nav>
                 </div>

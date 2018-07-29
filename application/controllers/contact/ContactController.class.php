@@ -42,9 +42,13 @@ class ContactController
 
                 throw new Exception("Email empty");
                 
-            } else {
+            } else if ( Form::verifEmail($formFields["email"])) {
 
                 $contactForm["email"] = strip_tags($formFields["email"]);
+
+            } else {
+
+                return ["errorMessage" => "Email invalide"]; 
 
             }
 

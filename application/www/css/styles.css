@@ -386,7 +386,7 @@ footer section ul li a:hover {
 	}
 
 	header {
-		height: 55rem;
+		height: 52rem;
 		background-size: initial;
 		background-position: initial;
 		background-attachment: fixed;
@@ -428,7 +428,7 @@ footer section ul li a:hover {
  		z-index: 2;
 		margin: 0;
 		display: flex;
-		padding: 10rem 30rem;
+		padding: 10rem 15rem;
 		position: relative;
 	}
 	.coaching {
@@ -447,13 +447,19 @@ footer section ul li a:hover {
 		position: relative;
  		z-index: 2;
 		margin: 0;
-		padding: 15rem 70rem;
+		padding: 15rem 50rem;
+		width: 100%;
 	}
 	.admin-message, .admin, .account {
-		padding: 15rem 20rem;
 		position: relative;
  		z-index: 2;
 		margin: 0;
+	}
+	.admin-message {
+		padding: 15rem 10rem;
+	}
+	.admin,.account {
+		padding: 15rem 20rem;
 	}
 
 	iframe {
@@ -490,5 +496,19 @@ footer section ul li a:hover {
 	}
 
 }
+@media screen and (min-width: 1600px) {
+
+	.login, .register {
+		padding: 15rem 70rem;
+	}
+	.contact {
+	   padding: 10rem 30rem;
+   }
+
+}
+
+
+
+
 
 
