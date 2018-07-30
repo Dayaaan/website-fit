@@ -39,8 +39,15 @@ class AccountController
             
         } else {
 
-          $user["password"] = Tools::cleanText($formFields["password"]);
+          if ( Validate::verifPassword($formFields["password"]) ) {
 
+            $user["password"] = Tools::cleanText($formFields["password"]);
+
+          } else {
+
+            return ["errorMessage" => "Votre mot de passe doit comporter des majuscules, des chiffres et plus de 6 caractères", "userById" => $userById];  
+
+          }  
         }
 
         if ( empty($formFields["password_confirm"]) ) {
@@ -49,7 +56,15 @@ class AccountController
 
         } else {
 
-          $passwordConfirm = Tools::cleanText($formFields["password_confirm"]);
+          if ( Validate::verifPassword($formFields["password_confirm"]) ) {
+
+            $passwordConfirm = Tools::cleanText($formFields["password_confirm"]);
+
+          } else {
+
+            return ["errorMessage" => "Votre mot de passe doit comporter des majuscules, des chiffres et plus de 6 caractères", "userById" => $userById];  
+
+          }  
 
         }
 

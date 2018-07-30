@@ -60,7 +60,7 @@ class RegisterController
                 
             } else {
 
-                if ( Validate::verifName($formFields["email"]) ) {
+                if ( Validate::verifEmail($formFields["email"]) ) {
 
                     $user["email"] = Tools::cleanText($formFields["email"]);
 
@@ -98,7 +98,7 @@ class RegisterController
 
                 if ( Validate::verifPassword($formFields["password_confirm"]) ) {
 
-                    $user["password"] = Tools::cleanText($formFields["password_confirm"]);
+                    $passwordConfirm = Tools::cleanText($formFields["password_confirm"]);
 
                 } else {
 

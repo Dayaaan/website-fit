@@ -26,11 +26,9 @@
 			<div class="form-group">
 				<input name="password_confirm" type="password" class="form-control" placeholder="Confirm Password">
 			</div>
-			<div>
-				<?php if (isset($errorMessage)) : ?>
-					<div class="alert alert-danger" role="alert"><?= $errorMessage  ?> *</div>
-				<?php endif; ?>
-			</div>
+            <?php if ( isset($errorMessage) ) : ?>
+                <div class="alert alert-danger" role="alert"><?= $errorMessage; ?> *</div>
+            <?php endif; ?>
 			<div class="form-group">
 				<input type="submit" value="Envoyer" class="btn btn-primary btn-md btn-lg" name="submit">
 			</div>

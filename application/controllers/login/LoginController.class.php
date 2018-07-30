@@ -56,6 +56,7 @@ class LoginController
         } else {
 
             return ['errorMessage' => 'Mot de passe incorrect'];
+            
         }
     }
 }

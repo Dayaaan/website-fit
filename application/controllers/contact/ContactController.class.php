@@ -44,7 +44,15 @@ class ContactController
                 
             } else {
 
-                $contactForm["firstname"] = strip_tags($formFields["firstname"]);
+                if ( Validate::verifName($formFields["firstname"]) ) {
+
+                    $contactForm["firstname"] = strip_tags($formFields["firstname"]);
+
+                } else {
+
+                    return ["errorMessage" => "Prénom Invalide"];  
+
+                }
 
             }
 
@@ -79,7 +87,7 @@ class ContactController
 
         $contactModel->saveMessageForm($contactForm);
 
-        return ["successMessage" => "Votre message a bien été envoyé"]
+        return ["successMessage" => "Votre message a bien été envoyé"];
 
         }
     }
