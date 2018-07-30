@@ -65,9 +65,6 @@ class ContactController
                 }
             }
 
-
-    
-
             if ( empty($formFields["message"]) ) {
 
                 throw new Exception("Message empty");
@@ -81,6 +78,8 @@ class ContactController
         $contactModel = new ContactModel();
 
         $contactModel->saveMessageForm($contactForm);
+
+        return ["successMessage" => "Votre message a bien été envoyé"]
 
         }
     }

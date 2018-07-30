@@ -5,7 +5,7 @@
  */
 
 $config['dsn']      = 'mysql:host=localhost;dbname=axelfit';
-$config['password'] = '';
+$config['password'] = 'root';
 $config['user']     = 'root';
 
 //vumartingg061289.mysql.db

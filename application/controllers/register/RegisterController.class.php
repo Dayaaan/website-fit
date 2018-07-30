@@ -25,8 +25,15 @@ class RegisterController
                 
             } else {
 
-                $user["lastname"] = Tools::cleanText($formFields["lastname"]);
+                if ( Validate::verifName($formFields["lastname"]) ) {
 
+                    $user["lastname"] = Tools::cleanText($formFields["lastname"]);
+
+                } else {
+
+                    return ["errorMessage" => "Nom Invalide"];  
+
+                }
             }
 
             if ( empty($formFields["firstname"]) ) {
@@ -35,7 +42,15 @@ class RegisterController
                 
             } else {
 
-                $user["firstname"] = Tools::cleanText($formFields["firstname"]);
+                if ( Validate::verifName($formFields["firstname"]) ) {
+
+                    $user["firstname"] = Tools::cleanText($formFields["firstname"]);
+
+                } else {
+
+                    return ["errorMessage" => "Prénom Invalide"];  
+
+                }
 
             }
 
@@ -45,7 +60,15 @@ class RegisterController
                 
             } else {
 
-                $user["email"] = Tools::cleanText($formFields["email"]);
+                if ( Validate::verifName($formFields["email"]) ) {
+
+                    $user["email"] = Tools::cleanText($formFields["email"]);
+
+                } else {
+
+                    return ["errorMessage" => "Email Invalide"];  
+
+                }               
 
             }
 
@@ -55,7 +78,15 @@ class RegisterController
                 
             } else {
 
-                $user["password"] = Tools::cleanText($formFields["password"]);
+                if ( Validate::verifPassword($formFields["password"]) ) {
+
+                    $user["password"] = Tools::cleanText($formFields["password"]);
+
+                } else {
+
+                    return ["errorMessage" => "Votre mot de passe doit comporter des majuscules, des chiffres et plus de 6 caractères"];  
+
+                }  
 
             }
 
@@ -65,7 +96,15 @@ class RegisterController
 
             } else {
 
-                $passwordConfirm = Tools::cleanText($formFields["password_confirm"]);
+                if ( Validate::verifPassword($formFields["password_confirm"]) ) {
+
+                    $user["password"] = Tools::cleanText($formFields["password_confirm"]);
+
+                } else {
+
+                    return ["errorMessage" => "Votre mot de passe doit comporter des majuscules, des chiffres et plus de 6 caractères"];  
+
+                }  
 
             }
 
@@ -85,6 +124,8 @@ class RegisterController
             $userModel = new UserModel();
 
             $userModel->createUser($user);
+
+            return ["successMessage" => "Votre compte a bien été cré"];
 
         }
         

@@ -8,5 +8,6 @@ class SessionFilter implements InterceptingFilter {
 
 		$userSession->start();
 
+		ini_set('display_errors', 1); 
 	}
 }

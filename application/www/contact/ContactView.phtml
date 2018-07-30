@@ -31,6 +31,9 @@
                 <textarea class="form-control" name="message" id="textarea" cols="30" rows="10" placeholder="Message"></textarea>
                 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un message *</div>
             </div>
+            <?php if ( isset($successMessage) ) : ?>
+                <div class="alert alert-success" role="alert"><?= $successMessage; ?> *</div>
+            <?php endif; ?>
             <div class="form-group">
                 <input type="submit" value="Envoyer" class="btn btn-primary btn-md btn-lg" name="submit">
             </div>
