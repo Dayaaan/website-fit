@@ -12,7 +12,9 @@
 			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10842.774496022368!2d-1.5427725!3d47.2030089!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb740f3e9c4082274!2sBasic-Fit+Salles+de+Sport+Nantes+rue+Anatole+de+Monzie!5e0!3m2!1sfr!2sfr!4v1530811679913" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 		  <form action="" method="POST"  id="contact_form" class="col-xl-8 col-lg-7">
-          <?php if (isset($errorMessage)) { echo $errorMessage;} ?>
+            <?php if ( isset($errorMessage) ) : ?>
+                <div class="alert alert-danger" role="alert"><?= $errorMessage; ?> *</div>
+            <?php endif; ?>
             <div class="form-group">
                 <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nom">
                 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un nom *</div>

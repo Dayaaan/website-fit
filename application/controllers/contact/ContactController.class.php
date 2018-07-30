@@ -18,13 +18,23 @@ class ContactController
 
             $contactForm = [];
 
+            $errorMessage = [];
+
             if ( empty($formFields["lastname"]) ) {
 
                 throw new Exception("Lastname empty");
                 
             } else {
 
-                $contactForm["lastname"] = strip_tags($formFields["lastname"]);
+                if ( Validate::verifName($formFields["lastname"]) ) {
+
+                    $contactForm["lastname"] = strip_tags($formFields["lastname"]);
+
+                } else {
+
+                    return ["errorMessage" => "Nom Invalide"];  
+
+                }
 
             }
 
@@ -42,15 +52,21 @@ class ContactController
 
                 throw new Exception("Email empty");
                 
-            } else if ( Form::verifEmail($formFields["email"])) {
-
-                $contactForm["email"] = strip_tags($formFields["email"]);
-
             } else {
 
-                return ["errorMessage" => "Email invalide"]; 
+                if ( Validate::verifEmail($formFields["email"]) ) {
 
+                    $contactForm["email"] = strip_tags($formFields["email"]);
+
+                } else {
+
+                    return ["errorMessage" => "Email Invalide"]; 
+
+                }
             }
+
+
+    
 
             if ( empty($formFields["message"]) ) {
 

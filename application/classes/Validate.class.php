@@ -1,6 +1,6 @@
 <?php 
 
-Class Form {
+Class Validate {
 
 	public static function verifPassword($password) {
  
@@ -13,18 +13,18 @@ Class Form {
 
             return false;
         }
-    }	
+    }
 
     public static function verifEmail($email) {
 
-        if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+        if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $email)) {
 
-            return true;
+           return true;
 
         } else {
 
             return false;
-
+            
         }
     }
 

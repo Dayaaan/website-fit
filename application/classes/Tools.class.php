@@ -11,7 +11,7 @@ Class Tools {
 		echo "</pre>";
 	} 
 
-	public static function  getFormattedDate($dateMysql) {
+	public static function getFormattedDate($dateMysql) {
 		
 		$timestamp = strtotime($dateMysql);
 
@@ -31,4 +31,12 @@ Class Tools {
 
 		return $text;
 	}
+	public static function verifEmail($email) {
+
+        if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $email)) {
+           return true;
+        } else {
+            return false;
+        }
+    }
 }
