@@ -25,7 +25,16 @@ class CoachingController
                 
             } else {
 
-                $coaching["lastname"] = strip_tags($formFields["lastname"]);
+
+                if ( Validate::verifName($formFields["lastname"]) ) {
+                    
+                    $coaching["lastname"] = strip_tags($formFields["lastname"]);
+
+                } else {
+
+                    return ["errorMessage" => "Nom Invalide"];  
+
+                }
 
             }
 
@@ -35,7 +44,15 @@ class CoachingController
                 
             } else {
 
-                $coaching["firstname"] = strip_tags($formFields["firstname"]);
+                if ( Validate::verifName($formFields["firstname"]) ) {
+
+                    $coaching["firstname"] = strip_tags($formFields["firstname"]);
+
+                } else {
+
+                    return ["errorMessage" => "Prénom Invalide"];  
+
+                }
 
             }
 
@@ -45,7 +62,16 @@ class CoachingController
                 
             } else {
 
-                $coaching["age"] = $formFields["age"];
+                if ( Validate::verifAge($formFields["age"]) ) {
+                    
+                    $coaching["age"] = $formFields["age"];
+
+                } else {
+
+                    return ["errorMessage" => "Age invalide"];
+
+                }
+                
 
             }            
 
@@ -56,8 +82,15 @@ class CoachingController
                 
             } else {
 
-                $coaching["email"] = strip_tags($formFields["email"]);
+                if ( Validate::verifEmail($formFields["email"]) ) {
 
+                    $coaching["email"] = strip_tags($formFields["email"]);
+
+                } else {
+
+                    return ["errorMessage" => "Email Invalide"]; 
+
+                }
             }
 
             if ( $formFields["gender"] == "Sexe..." ) {
@@ -65,9 +98,16 @@ class CoachingController
                 throw new Exception("Gender empty");
                 
             } else {
+                
+                if ($formFields["gender"] == "Homme" || $formFields["gender"] == "Femme" ) {
 
-                $coaching["gender"] = strip_tags($formFields["gender"]);
+                    $coaching["gender"] = strip_tags($formFields["gender"]);
 
+                } else {
+
+                    return ["errorMessage" => "Choix du sexe invalide"];
+
+                }
             }
 
             if ( empty($formFields["weight"]) ) {

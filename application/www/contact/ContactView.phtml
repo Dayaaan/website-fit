@@ -16,19 +16,19 @@
                 <div class="alert alert-danger" role="alert"><?= $errorMessage; ?> *</div>
             <?php endif; ?>
             <div class="form-group">
-                <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nom">
+                <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Nom" required>
                 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un nom *</div>
             </div>
             <div class="form-group">
-                <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Prénom">
+                <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Prénom" required>
                 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un prénom *</div>
             </div>
             <div class="form-group">
-                <input id="email" name="email" type="text" class="form-control" placeholder="E-mail">
+                <input id="email" name="email" type="text" class="form-control" placeholder="E-mail" required>
                 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un E-mail *</div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" name="message" id="textarea" cols="30" rows="10" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" id="textarea" cols="30" rows="10" placeholder="Message" required></textarea>
                 <div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un message *</div>
             </div>
             <?php if ( isset($successMessage) ) : ?>

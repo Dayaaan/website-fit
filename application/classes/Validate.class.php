@@ -40,4 +40,16 @@ Class Validate {
 
         }
     }
+
+    public static function verifAge($age) {
+        if ( is_int($age) ) {
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
+    }
 }
