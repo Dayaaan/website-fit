@@ -41,9 +41,10 @@ Class Validate {
         }
     }
 
-    public static function verifAge($age) {
-        if ( is_int($age) ) {
+    public static function verifNumber($number) {
 
+        if (preg_match("/^[0-9]+$/", $number)) {
+            
             return true;
 
         } else {

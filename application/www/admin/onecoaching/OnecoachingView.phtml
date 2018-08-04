@@ -1,0 +1,95 @@
+<div class="table-onecoaching table-responsive">
+    <table id="mytable" class="table table-bordred table-striped table-hover">
+        <tbody>
+            <tr>
+                <td>
+                    <strong>Nom :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["lastname"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Prenom :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["firstname"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Age :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["age"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Email :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["email"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Sexe :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["gender"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Poid :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["weight"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Taille :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["height"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Nombre de training :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["nb_training"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Nombre d'année :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["nb_year"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Condition.. autre :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["other"]); ?>	
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Objectif :</strong>
+                </td>
+                <td>
+                    <?= Tools::cleanText($coaching["goal"]); ?>	
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#title-coaching"><i class="fas fa-arrow-up"></i> Remonter vers le haut</a>
+</div>

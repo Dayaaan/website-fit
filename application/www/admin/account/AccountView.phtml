@@ -1,40 +1,35 @@
-<section class="account">
-	<h1><i class="fas fa-user-alt"></i> Votre compte</h1>
-	<div class="user">
-		<p>Nom : <?= $userById["lastname"]; ?></p>
-		<p>Prénom : <?= $userById["firstname"]; ?></p>
-		<p>Email : <?= $userById["email"]; ?></p>
-		<p>Rôle : <?= $userById["role"]; ?></p>
-	</div>
-	<div class="success-message">
-		<?php if (isset($successMessage)) : ?>
-			<div class="alert alert-success" role="alert"><?= $successMessage  ?> *</div>
-			<style>
-				form {
-					display: none;
-				}
-		    </style>
-		<?php endif; ?>
-	</div>
-	<form action="" method="POST">
-		<strong>Changer le mot de passe : </strong>
-		<div class="form-password">
-			<input type="hidden" name="user_id" value="<?= $userById['id']; ?>">
-			<div class="form-group">
-				<input name="password" type="password" class="form-control" placeholder="Password">
-			</div>
-			<div class="form-group">
-				<input name="password_confirm" type="password" class="form-control" placeholder="Confirm Password">
-			</div>
-            <?php if ( isset($errorMessage) ) : ?>
-                <div class="alert alert-danger" role="alert"><?= $errorMessage; ?> *</div>
-            <?php endif; ?>
-			<div class="form-group">
-				<input type="submit" value="Envoyer" class="btn btn-primary btn-md btn-lg" name="submit">
-			</div>
+	<section class="account">
+		<h1><i class="fas fa-user-alt"></i> Votre compte</h1>
+		<div class="user">
+			<p>Nom : <?= $userById["lastname"]; ?></p>
+			<p>Prénom : <?= $userById["firstname"]; ?></p>
+			<p>Email : <?= $userById["email"]; ?></p>
+			<p>Rôle : <?= $userById["role"]; ?></p>
 		</div>
-	</form>
-
-
-		
+		<div class="success-message">
+			<?php if (isset($successMessage)) : ?>
+				<div class="alert alert-success" role="alert"><?= $successMessage  ?> *</div>
+			<?php endif; ?>
+		</div>
+		<form action="" method="POST" id="contact_form">
+			<strong>Changer le mot de passe : </strong>
+			<div class="form-password">
+				<input type="hidden" name="user_id" value="<?= $userById['id']; ?>">
+				<div class="form-group">
+					<input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un mot de passe *</div>
+				</div>
+				<div class="form-group">
+					<input name="password_confirm" type="password" class="form-control" id="password_confirm" placeholder="Confirm Password" required>
+					<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un mot de passe *</div>
+				</div>
+				<?php if ( isset($errorMessage) ) : ?>
+					<div class="alert alert-danger" role="alert"><?= $errorMessage; ?> *</div>
+				<?php endif; ?>
+				<div class="form-group">
+					<input type="submit" value="Envoyer" class="btn btn-primary btn-md btn-lg" name="submit">
+				</div>
+			</div>
+		</form>
+		<a href="<?= $requestUrl ?>/Admin"><i class="fas fa-cogs"></i> Retour à la page admin</a>
 	</section>

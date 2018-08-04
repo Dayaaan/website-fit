@@ -62,17 +62,15 @@ class CoachingController
                 
             } else {
 
-                if ( Validate::verifAge($formFields["age"]) ) {
+                if ( Validate::verifNumber($formFields["age"]) ) {
                     
                     $coaching["age"] = $formFields["age"];
 
                 } else {
 
-                    return ["errorMessage" => "Age invalide"];
+                    return ["errorMessage" => "Age invalide ( ex : 25 )"];
 
                 }
-                
-
             }            
 
 
@@ -93,13 +91,13 @@ class CoachingController
                 }
             }
 
-            if ( $formFields["gender"] == "Sexe..." ) {
+            if ( $formFields["gender"] == "" ) {
 
                 throw new Exception("Gender empty");
                 
             } else {
                 
-                if ($formFields["gender"] == "Homme" || $formFields["gender"] == "Femme" ) {
+                if ($formFields["gender"] == "man" || $formFields["gender"] == "woman" ) {
 
                     $coaching["gender"] = strip_tags($formFields["gender"]);
 
@@ -116,34 +114,68 @@ class CoachingController
 
             } else {
 
-                $coaching["weight"] = strip_tags($formFields["weight"]);
+                if ( Validate::verifNumber($formFields["weight"]) ) {
+                    
+                    $coaching["weight"] = strip_tags($formFields["weight"]);
 
+                } else {
+
+                    return ["errorMessage" => "Poids invalide ( ex: 55 )"];
+
+                } 
             }
+
             if ( empty($formFields["height"]) ) {
 
                 throw new Exception("Height empty");
 
             } else {
 
-                $coaching["height"] = strip_tags($formFields["height"]);
+                if ( Validate::verifNumber($formFields["height"]) ) {
+                    
+                    $coaching["height"] = strip_tags($formFields["height"]);
+
+                } else {
+
+                    return ["errorMessage" => "Taille invalide ( ex : 165 )"];
+
+                } 
 
             }
-            if ( $formFields["nb_training"] == "Nombre de séances par semaine" ) {
+            if ( $formFields["nb_training"] == "" ) {
 
                 throw new Exception("nb training empty");
 
             } else {
 
-                $coaching["nb_training"] = strip_tags($formFields["nb_training"]);
+                if ( Validate::verifNumber($formFields["nb_training"]) ) {
+                    
+                    $coaching["nb_training"] = strip_tags($formFields["nb_training"]);
+
+                } else {
+
+                    return ["errorMessage" => "Nombre de training invalide "];
+
+                } 
+                
 
             }
-            if ( $formFields["nb_year"] == "Nombre d'années de sport" ) {
+            if ( $formFields["nb_year"] == "" ) {
 
                 throw new Exception("nb year empty");
 
             } else {
+                
+                if ( Validate::verifNumber($formFields["nb_year"]) ) {
+                    
+                    $coaching["nb_year"] = strip_tags($formFields["nb_year"]);
 
-                $coaching["nb_year"] = strip_tags($formFields["nb_year"]);
+                } else {
+
+                    return ["errorMessage" => "Nombre d'années de sport invalide "];
+
+                } 
+                
 
             }
             if ( empty($formFields["other"]) ) {
@@ -168,6 +200,8 @@ class CoachingController
             $coachingModel = new CoachingModel();
 
             $coachingModel->saveCoaching($coaching);
+
+            return ["successMessage" => "Votre inscription a bien été enregistré"];
 
         }
     }

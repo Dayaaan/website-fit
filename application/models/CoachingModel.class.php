@@ -10,5 +10,39 @@ Class CoachingModel {
 
 		$db->executeSql($sql,$coaching);
 
-	}	
+	}
+	
+	public function getAllCoachings() {
+
+		$db = new Database();
+
+		$sql = "SELECT * FROM coaching_form";
+
+		$coachings = $db->query($sql);
+
+		return $coachings;
+
+	}
+
+	public function getCoachingById($id) {
+
+        $db = new Database();
+
+        $sql = "SELECT * FROM coaching_form WHERE id = ?";
+
+        $coaching = $db->queryOne($sql,[$id]);
+
+        return $coaching;
+
+    }
+
+    public function deleteCoachingById($id) {
+
+        $db = new Database();
+
+        $sql = "DELETE FROM coaching_form WHERE id = ?";
+        
+        $db->executeSql($sql,[$id]);
+
+    }
 }

@@ -8,9 +8,9 @@ class MessageController
 
         $userSession->isNotAdmin();
         
-        $messages = new ContactModel();
+        $contactModel = new ContactModel();
 
-    	$messages = $messages->getAllMessagesForm();
+    	$messages = $contactModel->getAllMessagesForm();
 
         return ["messages" => $messages];
     }

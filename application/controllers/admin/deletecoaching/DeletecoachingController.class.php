@@ -1,19 +1,20 @@
 <?php
 
-class CoachController
+class DeletecoachingController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-        
         $userSession = new UserSession();
 
         $userSession->isNotAdmin();
-        
+
+        $id = $queryFields["id"];
+
         $coachingModel = new CoachingModel();
 
-    	$coachings = $coachingModel->getAllCoachings();
+        $coachingModel->deleteCoachingById($id);
 
-        return ["coachings" => $coachings];
+        $http->redirectTo('Admin/Coach');
         
     }
 

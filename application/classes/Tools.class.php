@@ -27,8 +27,6 @@ Class Tools {
 
 		$text = htmlentities($text);
 
-		$text = htmlspecialchars($text);
-
 		return $text;
 	}
 	public static function verifEmail($email) {

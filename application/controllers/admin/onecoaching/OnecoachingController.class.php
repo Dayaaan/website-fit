@@ -1,19 +1,20 @@
 <?php
 
-class CoachController
+class OnecoachingController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-        
         $userSession = new UserSession();
 
         $userSession->isNotAdmin();
-        
+
+        $id = $queryFields["id"];
+
         $coachingModel = new CoachingModel();
 
-    	$coachings = $coachingModel->getAllCoachings();
+        $coaching = $coachingModel->getCoachingById($id);
 
-        return ["coachings" => $coachings];
+        return ["coaching" => $coaching, "_raw_template" => true];
         
     }
 

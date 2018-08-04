@@ -1,31 +1,57 @@
-    <div class="coaching">
-        <h1><i class="fas fa-dumbbell"></i> Vos Coachings</h1>
+    <div class="admin-message table-responsive">	
 
-        <table id="mytable" class="table table-bordred table-striped table-hover">
-                   
-            <thead>
-                <th scope="col">#</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Inscription envoyé le</th>
-                <th scope="col">Read</th>
-                <th scope="col">Delete</th>
-            </thead>
-            <tbody>
+        <h1 id="title-coaching"><i class="fas fa-comments"></i> Vos coachings</h1>
 
-                <tr>
-                    <td scope="row">
-                             
-                    </td>
-                    <td>
-                        <a href="<?= $requestUrl ?>/Admin/Onemessage?id=1"><i class="fab fa-readme"></i></a>
-                    </td>
-                    <td>
-                        <button data-id="" class="btn-delete"><i class="fas fa-trash-alt"></i></button>
-                    </td>
-                </tr>
+        <?php if ($coachings == null) : ?>
 
-            </tbody>
-        </table>
-        <a href="<?= $requestUrl ?>/Admin">Retour à la page admin</a>
+            <p>Vous avez <strong>aucun</strong> aucun coaching</p>
+
+        <?php else : ?>	
+        <div class="table-responsive" id="table-coaching">
+            <table id="mytable" class="table table-bordred table-striped table-hover">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Message envoyé le</th>
+                    <th scope="col">Read</th>
+                    <th scope="col">Delete</th>
+                </thead>
+                <tbody>
+
+                    <?php
+                        $count = 1;
+                        foreach ($coachings as $coaching) : 
+                    ?>
+
+                    <tr>
+                        <td scope="row">
+                            <?= $count++; ?>		
+                        </td>
+                        <td>
+                            <?= Tools::cleanText($coaching["lastname"]); ?>	
+                        </td>
+                        <td>
+                            <?= Tools::cleanText($coaching["firstname"]); ?>				    		
+                        </td>
+                        <td>
+                            <?= Tools::getFormattedDate($coaching["created_at"]); ?>
+                        </td>
+                        <td>
+                            <a href="#readme" data-id="<?= $coaching['id']; ?>" class="btn-read"><i class="fab fa-readme"></i></a>
+                        </td>
+                        <td>
+                            <button data-id="<?= $coaching["id"]; ?>" class="btn-delete"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+            <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+            <div id="readme">
+            </div>
+        <a href="<?= $requestUrl ?>/Admin"><i class="fas fa-cogs"></i> Retour à la page admin</a>
     </div>
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+    <script src="<?= $wwwUrl ?>/js/coaching.js"></script>

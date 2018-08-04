@@ -263,7 +263,6 @@ header nav ul li a:hover::after {
 	margin-top: 5rem;
 	margin-bottom: 2rem;
 }
-
 .fa-readme {
 	color: #008000;
 }
@@ -279,13 +278,17 @@ header nav ul li a:hover::after {
 	background: none;
 	cursor: pointer;
 }
-
+.table-onecoaching {
+	width: 100%;
+}
+#readme {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
 .user {
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 }
-
-
 
 /*********
 **FOOTER**
@@ -353,6 +356,10 @@ footer section ul li a:hover {
 	.crossfit {
 		width: 40%;
 		padding-top: 20rem;
+	}
+	#readme {
+		margin: 5rem;
+		
 	}
 
 
@@ -460,6 +467,13 @@ footer section ul li a:hover {
 	}
 	.admin,.account {
 		padding: 15rem 20rem;
+	}
+	.table-onecoaching {
+		width: 50%;
+	}
+	#readme {
+		margin: 5rem;
+		
 	}
 
 	iframe {
