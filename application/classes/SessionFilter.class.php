@@ -1,6 +1,6 @@
 <?php
 
-class SessionFilter implements InterceptingFilter {
+Class SessionFilter implements InterceptingFilter {
 
 	public function run(Http $http, array $queryFields, array $formFields) {
 
@@ -13,5 +13,6 @@ class SessionFilter implements InterceptingFilter {
 		// affiche erreur sur mac 
 		
 		ini_set('display_errors', 1); 
+
 	}
 }
