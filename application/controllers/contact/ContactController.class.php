@@ -87,6 +87,8 @@ class ContactController
 
         $contactModel->saveMessageForm($contactForm);
 
+        Tools::sendMail($contactForm["email"]);
+
         return ["successMessage" => "Votre message a bien été envoyé"];
 
         }

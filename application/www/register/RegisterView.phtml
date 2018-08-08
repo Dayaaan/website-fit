@@ -4,6 +4,9 @@
 		    <?php if ( isset($errorMessage) ) : ?>
                 <div class="alert alert-danger" role="alert"><?= $errorMessage; ?> *</div>
             <?php endif; ?>
+			<?php if ( isset($successMessage) ) : ?>
+                <div class="alert alert-success" role="alert"><?= $successMessage; ?> *</div>
+            <?php endif; ?>
 			<div class="form-group">
 				<input name="lastname" type="text" class="form-control" placeholder="Nom" required>
 				<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un nom *</div>
@@ -24,9 +27,6 @@
 				<input name="password_confirm" type="password" class="form-control" id="password_confirm" placeholder="Confirm Password" required>
 				<div class="hide-alert alert alert-danger" role="alert">Veuillez saissir un mot de passe *</div>
 			</div>
-			<?php if ( isset($successMessage) ) : ?>
-                <div class="alert alert-success" role="alert"><?= $successMessage; ?> *</div>
-            <?php endif; ?>
 			<div class="form-group">
 				<input type="submit" value="S'enregistrer" class="btn btn-primary btn-md btn-lg" name="submit">
 			</div>

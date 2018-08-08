@@ -17,7 +17,7 @@ class CoachingController
     {
     	if ( isset($_POST["submit"]) ) {
 
-            $coaching = [];
+            $coachingForm = [];
 
             if ( empty($formFields["lastname"]) ) {
 
@@ -28,7 +28,7 @@ class CoachingController
 
                 if ( Validate::verifName($formFields["lastname"]) ) {
                     
-                    $coaching["lastname"] = strip_tags($formFields["lastname"]);
+                    $coachingForm["lastname"] = strip_tags($formFields["lastname"]);
 
                 } else {
 
@@ -46,7 +46,7 @@ class CoachingController
 
                 if ( Validate::verifName($formFields["firstname"]) ) {
 
-                    $coaching["firstname"] = strip_tags($formFields["firstname"]);
+                    $coachingForm["firstname"] = strip_tags($formFields["firstname"]);
 
                 } else {
 
@@ -64,7 +64,7 @@ class CoachingController
 
                 if ( Validate::verifNumber($formFields["age"]) ) {
                     
-                    $coaching["age"] = $formFields["age"];
+                    $coachingForm["age"] = $formFields["age"];
 
                 } else {
 
@@ -82,7 +82,7 @@ class CoachingController
 
                 if ( Validate::verifEmail($formFields["email"]) ) {
 
-                    $coaching["email"] = strip_tags($formFields["email"]);
+                    $coachingForm["email"] = strip_tags($formFields["email"]);
 
                 } else {
 
@@ -99,7 +99,7 @@ class CoachingController
                 
                 if ($formFields["gender"] == "man" || $formFields["gender"] == "woman" ) {
 
-                    $coaching["gender"] = strip_tags($formFields["gender"]);
+                    $coachingForm["gender"] = strip_tags($formFields["gender"]);
 
                 } else {
 
@@ -116,7 +116,7 @@ class CoachingController
 
                 if ( Validate::verifNumber($formFields["weight"]) ) {
                     
-                    $coaching["weight"] = strip_tags($formFields["weight"]);
+                    $coachingForm["weight"] = strip_tags($formFields["weight"]);
 
                 } else {
 
@@ -133,7 +133,7 @@ class CoachingController
 
                 if ( Validate::verifNumber($formFields["height"]) ) {
                     
-                    $coaching["height"] = strip_tags($formFields["height"]);
+                    $coachingForm["height"] = strip_tags($formFields["height"]);
 
                 } else {
 
@@ -150,41 +150,22 @@ class CoachingController
 
                 if ( Validate::verifNumber($formFields["nb_training"]) ) {
                     
-                    $coaching["nb_training"] = strip_tags($formFields["nb_training"]);
+                    $coachingForm["nb_training"] = strip_tags($formFields["nb_training"]);
 
                 } else {
 
                     return ["errorMessage" => "Nombre de training invalide "];
 
                 } 
-                
-
             }
-            if ( $formFields["nb_year"] == "" ) {
-
-                throw new Exception("nb year empty");
-
-            } else {
-                
-                if ( Validate::verifNumber($formFields["nb_year"]) ) {
-                    
-                    $coaching["nb_year"] = strip_tags($formFields["nb_year"]);
-
-                } else {
-
-                    return ["errorMessage" => "Nombre d'années de sport invalide "];
-
-                } 
-                
-
-            }
+            
             if ( empty($formFields["other"]) ) {
 
                 throw new Exception("other empty");
 
             } else {
 
-                $coaching["other"] = strip_tags($formFields["other"]);
+                $coachingForm["other"] = strip_tags($formFields["other"]);
 
             }
             if ( empty($formFields["goal"]) ) {
@@ -193,13 +174,15 @@ class CoachingController
 
             } else {
 
-                $coaching["goal"] = strip_tags($formFields["goal"]);
+                $coachingForm["goal"] = strip_tags($formFields["goal"]);
 
             }            
 
             $coachingModel = new CoachingModel();
 
-            $coachingModel->saveCoaching($coaching);
+            $coachingModel->saveCoaching($coachingForm);
+
+            Tools::sendMail($coachingForm["email"]);
 
             return ["successMessage" => "Votre inscription a bien été enregistré"];
 

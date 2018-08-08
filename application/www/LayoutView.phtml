@@ -53,17 +53,17 @@
                 <span></span>
                 <span></span>
                 <ul id="menu">
-                    <a href="<?= $requestUrl ?>"><li>Accueil</li></a>
-                    <a href="<?= $requestUrl ?>/Coaching"><li>Coaching</li></a>
-                    <a href="<?= $requestUrl ?>/Contact"><li>Contactez moi</li></a>
+                    <li><a href="<?= $requestUrl ?>">Accueil</a></li>
+                    <li><a href="<?= $requestUrl ?>/Coaching">Coaching</a></li>
+                    <li><a href="<?= $requestUrl ?>/Contact">Contactez moi</a></li>
                     <?php
                         $userSession = new UserSession();
                     ?>
                     <?php if ($userSession->isConnected()): ?>
-                    <a href="<?= $requestUrl ?>/Admin"><li>Admin</li></a>
-                    <a href="<?= $requestUrl ?>/Logout"><li>Se déconnecter</li></a>
+                    <li><a href="<?= $requestUrl ?>/Admin">Admin</a></li>
+                    <li><a href="<?= $requestUrl ?>/Logout">Se déconnecter</a></li>
                     <?php else: ?>
-                        <a href="<?= $requestUrl ?>/Login"><li>Login</li></a>
+                        <li><a href="<?= $requestUrl ?>/Login">Login</a></li>
                     <?php endif ?>
                 </ul>
             </div>

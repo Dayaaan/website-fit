@@ -32,7 +32,7 @@ Class UserSession {
 		}
 	}
 
-	//Si il n'est pas connecté on le redirige vers la page forbidden 
+	//Si il n'est pas admin on le redirige vers la page forbidden 
 
 	public function isNotAdmin() {
 

@@ -2,7 +2,8 @@
 
 $(function() {
 
-
+	// confirmation de suppression
+	
 	$('.btn-delete').on("click", function() {
 
 

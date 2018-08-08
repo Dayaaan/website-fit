@@ -2,6 +2,7 @@
 
 $(function() {
 
+	// confirmation de supression
 
 	$('.btn-delete').on("click", function() {
 
@@ -20,6 +21,8 @@ $(function() {
 
 	})
 	
+	// requette ajax 
+	
 	$("a[href$='readme']").on("click", function() {
 		
 		var coachingId = $(this).attr("data-id");
@@ -33,11 +36,28 @@ $(function() {
 		};
 
 		$.get(urlHTML, param, function (html) {
-
+			
 			$('#readme').html(html);
 
 		});
-	});
 
+		//Defilement Fluide lors du click 
+
+		var the_id = $(this).attr("href");
+
+		if (the_id === '#') {
+
+			return;
+
+		}
+		$('html, body').animate({
+
+			scrollTop:$(the_id).offset().top
+
+		}, 'slow');
+
+		return false;
+
+	});
 });
 

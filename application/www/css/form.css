@@ -84,10 +84,6 @@ iframe {
 		width: 100%;
 		padding: 15rem 7rem;
 	}
-
-	.coaching-form {
-		width: 35%;
-	}
 	.form-password {
 		width: 45%;
 	}
@@ -98,10 +94,6 @@ iframe {
 	.contact form {
 		padding-left: 15rem;
 		padding-right: 15rem;
-	}
-
-	.coaching-form {
-		width: 30%;
 	}
 	.form-password {
 		width: 25%;

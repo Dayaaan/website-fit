@@ -30,7 +30,7 @@ Class Validate {
 
     public static function verifName($name) {
 
-        if ( preg_match("/^([a-zA-Z' ]+)$/",$name) ) {
+        if ( preg_match("/^([a-zàáâäçèéêëìíîïñòóôöùúûüA-Z' ]+)$/",$name) ) {
 
             return true;
 

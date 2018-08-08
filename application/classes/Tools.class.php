@@ -29,12 +29,18 @@ Class Tools {
 
 		return $text;
 	}
-	public static function verifEmail($email) {
 
-        if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $email)) {
-           return true;
-        } else {
-            return false;
-        }
-    }
+	public static function sendMail($email) {
+
+		$to = "contact@vumartin.fr";
+
+		$subject = "Message ou coaching recu sur votre site";
+
+		$message = "Bonjour , vous venez de recevoir un message sur votre site de coaching privé , vous pouvez visualiser vos message sur le site www.vumartin.fr/ dans la section ADMIN";
+
+		$headers = 'From : contact@vumartin.fr';
+
+		mail($to, $subject, $message, $headers);
+		
+	}
 }
