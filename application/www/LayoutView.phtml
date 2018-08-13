@@ -6,7 +6,7 @@
     <meta name="description" content="Site de coaching privé" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="Coaching, Coach privé, Coach Nantes, Nantes, fitness" />
-    <title>Dayan Coach privé</title>
+    <title>Adrien Tessier Coach privé</title>
     <!--===============================================================================================-->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -68,9 +68,7 @@
                 </ul>
             </div>
         </nav>
-         
         <?php $bag = new FlashBag(); ?>
-
         <?php if ($bag->hasMessages()): ?>
         <ul class="box-messages">
             <?php foreach ($bag->fetchMessages() as $message): ?>
@@ -82,7 +80,6 @@
     <main>
         <div class="loader"><img src="<?= $wwwUrl ?>/images/loader.gif" alt="gif animation loading"></div>    
         <?php include $this->viewData['template'] ?>
-
     </main>
     <footer>
         <section>
@@ -110,22 +107,16 @@
                         </li>
                     </ul>
                 </div>
-                
             </div>
             <div class="copyright">
                 <p>
                     <small>
-                        &copy; 2018 Dayan Nguyen. All Rights Reserved. <a href="<?= $requestUrl ?>/Mentions">Mentions Légales</a> 
+                        &copy; 2018 Adrien Tessier . All Rights Reserved.
                     </small>
                 </p>
             </div>
         </section>
-
-        <!-- <?php Tools::pre($_SESSION); ?> -->
-
-    </footer>
-     
-    
+    </footer>   
     <script src="<?= $wwwUrl ?>/js/main.js"></script>
     <script src="<?= $wwwUrl ?>/js/form.js"></script>
 </body>

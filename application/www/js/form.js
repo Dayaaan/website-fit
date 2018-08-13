@@ -42,6 +42,8 @@ $(function() {
                 })
             })
         }
+
         formValidator();
+        
     })
 });

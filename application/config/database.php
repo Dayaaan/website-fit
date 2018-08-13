@@ -15,6 +15,6 @@ $config['user']     = 'vumartingg061289';
 // $config['user']     = 'vumartingg061289';
 
 
-// $config['dsn']      = 'mysql:host=localhost;dbname=dayanfit';
+// $config['dsn']      = 'mysql:host=localhost;dbname=coachtessier';
 // $config['password'] = 'root';
 // $config['user']     = 'root';

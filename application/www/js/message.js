@@ -6,7 +6,6 @@ $(function() {
 	
 	$('.btn-delete').on("click", function() {
 
-
 	    if( confirm("Voulez vous vraiment supprimer ce message ?") ) {
 
 	        alert('Suppression effectuée');
@@ -20,6 +19,4 @@ $(function() {
 	    return false;
 
 	})
-
-
 });

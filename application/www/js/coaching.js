@@ -50,6 +50,7 @@ $(function() {
 			return;
 
 		}
+		
 		$('html, body').animate({
 
 			scrollTop:$(the_id).offset().top

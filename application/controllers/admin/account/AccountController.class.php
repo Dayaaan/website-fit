@@ -7,7 +7,7 @@ class AccountController
 
         $userSession = new UserSession();
 
-        $userSession->isNotAdmin();
+        $userSession->isAdmin();
 
         $id = $queryFields["id"];
 
@@ -70,7 +70,6 @@ class AccountController
 
         $newPassword = $user["password"];
 
-
         if ( $newPassword != $passwordConfirm ) {
 
           return ["errorMessage" => "Mot de passe différent", "userById" => $userById];
@@ -88,9 +87,8 @@ class AccountController
         return ["successMessage" => "Votre mot de passe a été changé", "userById" => $userById];
 
       } 
-
+      
       return ["userById" => $userById];
-       
 
     }
 }

@@ -6,7 +6,7 @@ class DeletemessageController
     {
         $userSession = new UserSession();
 
-        $userSession->isNotAdmin();
+        $userSession->isAdmin();
 
         $id = $queryFields["id"];
 

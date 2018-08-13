@@ -6,7 +6,7 @@ class DeletecoachingController
     {
         $userSession = new UserSession();
 
-        $userSession->isNotAdmin();
+        $userSession->isAdmin();
 
         $id = $queryFields["id"];
 

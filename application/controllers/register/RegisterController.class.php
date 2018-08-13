@@ -51,7 +51,6 @@ class RegisterController
                     return ["errorMessage" => "Prénom Invalide"];  
 
                 }
-
             }
 
             if ( empty($formFields["email"]) ) {
@@ -69,7 +68,6 @@ class RegisterController
                     return ["errorMessage" => "Email Invalide"];  
 
                 }               
-
             }
 
             if ( empty($formFields["password"]) ) {
@@ -87,7 +85,6 @@ class RegisterController
                     return ["errorMessage" => "Votre mot de passe doit comporter des majuscules, des chiffres et plus de 6 caractères"];  
 
                 }  
-
             }
 
             if ( empty($formFields["password_confirm"]) ) {
@@ -105,7 +102,6 @@ class RegisterController
                     return ["errorMessage" => "Votre mot de passe doit comporter des majuscules, des chiffres et plus de 6 caractères"];  
 
                 }  
-
             }
 
             $password = $user["password"];
@@ -127,7 +123,6 @@ class RegisterController
 
             return ["successMessage" => "Votre compte a bien été cré"];
 
-        }
-        
+        }     
     }
 }

@@ -6,7 +6,7 @@ class MessageController
     {
         $userSession = new UserSession();
 
-        $userSession->isNotAdmin();
+        $userSession->isAdmin();
         
         $contactModel = new ContactModel();
 

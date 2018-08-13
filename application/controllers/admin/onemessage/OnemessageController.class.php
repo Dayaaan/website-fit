@@ -7,7 +7,7 @@ class OnemessageController
 
         $userSession = new UserSession();
 
-        $userSession->isNotAdmin();
+        $userSession->isAdmin();
 
         $id = $queryFields["id"];
 

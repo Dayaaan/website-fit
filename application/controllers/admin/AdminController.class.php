@@ -6,7 +6,7 @@ class AdminController
     {
         $userSession = new UserSession();
 
-    	$userSession->isNotAdmin();
+    	$userSession->isAdmin();
     }
 
     public function httpPostMethod(Http $http, array $formFields)

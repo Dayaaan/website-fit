@@ -7,7 +7,7 @@ class CoachController
         
         $userSession = new UserSession();
 
-        $userSession->isNotAdmin();
+        $userSession->isAdmin();
         
         $coachingModel = new CoachingModel();
 

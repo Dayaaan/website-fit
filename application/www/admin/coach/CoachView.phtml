@@ -1,11 +1,7 @@
     <div class="admin-message table-responsive">	
-
         <h1 id="title-coaching"><i class="fas fa-comments"></i> Vos coachings</h1>
-
         <?php if ($coachings == null) : ?>
-
-            <p>Vous avez <strong>aucun</strong> aucun coaching</p>
-
+             <p>Vous avez <strong>aucun</strong> aucun coaching</p>
         <?php else : ?>	
         <div class="table-responsive" id="table-coaching">
             <table id="mytable" class="table table-bordred table-striped table-hover">
@@ -18,12 +14,10 @@
                     <th scope="col">Delete</th>
                 </thead>
                 <tbody>
-
                     <?php
                         $count = 1;
                         foreach ($coachings as $coaching) : 
                     ?>
-
                     <tr>
                         <td scope="row">
                             <?= $count++; ?>		
@@ -45,7 +39,7 @@
                         </td>
                     </tr>
                     <?php endforeach; ?>
-            <?php endif; ?>
+        <?php endif; ?>
                 </tbody>
             </table>
         </div>

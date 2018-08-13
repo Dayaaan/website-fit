@@ -1,57 +1,56 @@
 	<div class="admin-message table-responsive">
-		
 		<h1><i class="fas fa-comments"></i> Message</h1>
 		<table id="mytable" class="table table-bordred table-striped table-hover">
-        <tbody>
-            <tr>
-                <td>
-                    <strong>Nom :</strong>
-                </td>
-                <td>
-                    <?= Tools::cleanText($message["lastname"]); ?>	
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Prenom :</strong>
-                </td>
-                <td>
-                    <?= Tools::cleanText($message["firstname"]); ?>	
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Email :</strong>
-                </td>
-                <td>
-                    <?= Tools::cleanText($message["email"]); ?>	
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Message :</strong>
-                </td>
-                <td>
-                    <?= Tools::cleanText($message["message"]); ?>	
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Message envoyé le :</strong>
-                </td>
-                <td>
-					<?= Tools::getFormattedDate($message["created_at"]); ?>	
-                </td>
-            </tr>
-        </tbody>
-    </table>
-	<div>	
-			<button data-id="<?= $message["id"]; ?>" class="btn-delete" ><i class="fas fa-trash-alt"></i> Supprimer</button>
-	</div>
-	<div>
-		<a href="<?= $requestUrl ?>/Admin/Message"><i class="fas fa-backward"></i> Retour aux messages</a>
-	</div>
-
-	<script src="<?= $wwwUrl ?>/js/utilities.js"></script>
-	<script src="<?= $wwwUrl ?>/js/message.js"></script>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Nom :</strong>
+                    </td>
+                    <td>
+                        <?= Tools::cleanText($message["lastname"]); ?>	
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Prenom :</strong>
+                    </td>
+                    <td>
+                        <?= Tools::cleanText($message["firstname"]); ?>	
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Email :</strong>
+                    </td>
+                    <td>
+                        <?= Tools::cleanText($message["email"]); ?>	
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Message :</strong>
+                    </td>
+                    <td>
+                        <?= Tools::cleanText($message["message"]); ?>	
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Message envoyé le :</strong>
+                    </td>
+                    <td>
+                        <?= Tools::getFormattedDate($message["created_at"]); ?>	
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>	
+                <button data-id="<?= $message["id"]; ?>" class="btn-delete" ><i class="fas fa-trash-alt"></i> Supprimer</button>
+        </div>
+        <div>
+            <a href="<?= $requestUrl ?>/Admin/Message"><i class="fas fa-backward"></i> Retour aux messages</a>
+        </div>
+    </div>
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+    <script src="<?= $wwwUrl ?>/js/message.js"></script>
 	

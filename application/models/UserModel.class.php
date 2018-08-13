@@ -45,8 +45,5 @@ Class UserModel {
 
         $db->executeSql($sql,$user);
 
-
     }
-
-
 }

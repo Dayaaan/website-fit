@@ -34,7 +34,7 @@ Class UserSession {
 
 	//Si il n'est pas admin on le redirige vers la page forbidden 
 
-	public function isNotAdmin() {
+	public function isAdmin() {
 
 		if ( empty($_SESSION['auth']) ) {
 

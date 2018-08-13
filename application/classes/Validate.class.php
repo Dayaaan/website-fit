@@ -17,7 +17,7 @@ Class Validate {
 
     public static function verifEmail($email) {
 
-        if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $email)) {
+        if ( preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $email) ) {
 
            return true;
 
@@ -43,7 +43,7 @@ Class Validate {
 
     public static function verifNumber($number) {
 
-        if (preg_match("/^[0-9]+$/", $number)) {
+        if ( preg_match("/^[0-9]+$/", $number) ) {
             
             return true;
 
