@@ -43,6 +43,8 @@ header {
 	background-image: url("../images/banniere.jpg");
 	background-size: cover;
 	background-position: center;
+	position: relative;
+	z-index: 99;
 }
 header nav ul {
 	padding-top: 3rem; 
